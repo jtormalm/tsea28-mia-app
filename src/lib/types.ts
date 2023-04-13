@@ -1,0 +1,1 @@
+export interface MIAData {alu: string, tb: string, fb: string, s: string, p: string, lc: string, seq: string, uadr: string, active: boolean, description: string, id: string};
