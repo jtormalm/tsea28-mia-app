@@ -150,7 +150,7 @@
                         on:dragenter={() => {hovering = rowIndex}}
                         on:dragend={() => {hovering = null}}
                         on:dragover={(e) => { e.preventDefault(); }}
-                        class="{hovering === rowIndex ? 'opacity-25 scale-105 duration-200' : 'duration-0'}  ease-out "
+                        class="{hovering === rowIndex ? 'opacity-25 scale-105 duration-200 delay-75' : 'duration-0'}  ease-out "
                     >
                         {#each row as cell, cellIndex}
                             <!-- Cell -->
