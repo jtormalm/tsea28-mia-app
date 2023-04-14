@@ -76,7 +76,7 @@
 
 <!-- @component This example creates a simple form modal. -->
 
-<div class="modal-example-form {cBase}">
+<div class="modal-example-form {cBase} h-3/4 overflow-scroll no-scrollbar">
     <div class="flex justify-between">
         <header class={cHeader}>Add new instruction</header>
         <div class="text-2xl mr-2">
@@ -122,3 +122,15 @@
         </div>
     </footer>
 </div>
+
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+</style>
