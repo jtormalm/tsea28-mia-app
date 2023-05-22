@@ -2,6 +2,7 @@
 	import Table from '$lib/Table.svelte';
 	// import { Table } from '@skeletonlabs/skeleton';
 
+	import { LightSwitch, clipboard, toastStore, type ToastSettings } from '@skeletonlabs/skeleton';
 	import { FileButton, Modal, SlideToggle } from '@skeletonlabs/skeleton';
 	import type { TableSource } from '@skeletonlabs/skeleton';
 
@@ -179,6 +180,18 @@
  
 	let deleteMode = false;
 
+	function copyHex(rowMeta) {
+		console.log(rowMeta.detail)
+		// sooooo janky
+		const hex = rowMeta.detail[rowMeta.detail.length - 3].slice(46, 55);
+		navigator.clipboard.writeText(hex);
+		const t: ToastSettings = {
+			message: `Copied ${hex} to clipboard`,
+			background: 'variant-filled-secondary',
+		};
+		toastStore.trigger(t);
+	}
+
 </script>
 
 <Toast />
@@ -222,11 +235,8 @@
 		</div>
 		{/if}
 	</div>
-
 </div>
 
 <div>
-	<!-- {#if loaded} -->
-	<Table ... interactive={true} on:edit={edit} on:delete={deleteRow} on:deleteAll={confirmDelete} on:create={addRow} source={tableSimple} bind:deleteMode/>
-	<!-- {/if} -->
+	<Table ... interactive={true} on:edit={edit} on:delete={deleteRow} on:deleteAll={confirmDelete} on:create={addRow} on:selected={copyHex} source={tableSimple} bind:deleteMode/>
 </div>

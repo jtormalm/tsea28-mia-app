@@ -14,7 +14,7 @@
 </script>
 
 <label class="label">
-	<span class="ml-0">{name}</span>
+	<span class="ml-0 select-none">{name}</span>
 	<select bind:value bind:this={select} class="select w-full">
 		<option selected={true} value={choices[0].value}>{choices[0].text}</option>
 		{#each choices.slice(1) as choice}

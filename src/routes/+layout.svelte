@@ -5,18 +5,18 @@
   import '@skeletonlabs/skeleton/styles/all.css';
   // Most of your app wide CSS should be put in this file
   import '../app.postcss';
-	import { AppShell, Modal } from '@skeletonlabs/skeleton';
+	import { AppShell } from '@skeletonlabs/skeleton';
 </script>
 
 <AppShell>
 
 	<!-- Router Slot -->
-  <div class="p-24 text-gray-200">
+  <div class="p-24">
     <slot />
   </div>
 	<!-- ---- / ---- -->
 	<svelte:fragment slot="footer">
-    <div class="flex justify-center p-4 text-gray-200 text-lg ">
+    <div class="flex justify-center p-4 text-lg ">
       © 2012-2023 Jakob Tormalm 
     </div>
   </svelte:fragment>

@@ -34,7 +34,7 @@
 
 </script>
 <div class="flex flex-col items-center">
-    <div>
+    <div class="select-none">
         {name}
     </div>
     <div class="flex">
